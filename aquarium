@@ -1,8 +1,0 @@
-lenght = int(input())
-width = int(input())
-height = int(input())
-percentage = float(input())
-aquarium_volume = lenght * width * height
-accesories_volume = aquarium_volume * (percentage/100)
-clear_volume = (aquarium_volume - accesories_volume)/1000
-print(clear_volume)

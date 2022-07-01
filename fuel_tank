@@ -1,0 +1,58 @@
+fuel_type = input()
+quantity = float(input())
+discount_card = input()
+gasoline = 2.22
+diesel = 2.33
+gas = 0.93
+discount_gasoline = 0.18
+discount_diesel = 0.12
+discount_gas = 0.08
+final_gasoline = gasoline - discount_gasoline
+final_diesel = diesel - discount_diesel
+final_gas = gas - discount_gas
+total_price = 0
+if discount_card == "Yes":
+    if fuel_type == "Gasoline":
+        if quantity < 20:
+            total_price = quantity * final_gasoline
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * final_gasoline
+        else:
+            total_price = 0.9 * quantity * final_gasoline
+    if fuel_type == "Diesel":
+        if quantity < 20:
+            total_price = quantity * final_diesel
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * final_diesel
+        else:
+            total_price = 0.9 * quantity * final_diesel
+    if fuel_type == "Gas":
+        if quantity < 20:
+            total_price = quantity * final_gas
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * final_gas
+        else:
+            total_price = 0.9 * quantity * final_gas
+else:
+    if fuel_type == "Gasoline":
+        if quantity < 20:
+            total_price = quantity * gasoline
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * gasoline
+        else:
+            total_price = 0.9 * quantity * gasoline
+    if fuel_type == "Diesel":
+        if quantity < 20:
+            total_price = quantity * diesel
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * diesel
+        else:
+            total_price = 0.9 * quantity * diesel
+    if fuel_type == "Gas":
+        if quantity < 20:
+            total_price = quantity * gas
+        elif quantity <= 25:
+            total_price = 0.92 * quantity * gas
+        else:
+            total_price = 0.9 * quantity * gas
+print(f"{total_price:.2f} lv.")
