@@ -1,0 +1,67 @@
+term = input()  # "one" or "two"
+contract_type = input()   # "Small" "Middle" "Large" "ExtraLarge"
+mobile_internet = input()   # "yes"   "no"
+payable_months = int(input())
+price = 0
+
+if term == "one":
+    if contract_type == "Small":
+        price = 9.98
+    elif contract_type == "Middle":
+        price = 18.99
+    elif contract_type == "Large":
+        price = 25.98
+    elif contract_type == "ExtraLarge":
+        price = 35.99
+elif term == "two":
+    if contract_type == "Small":
+        price = 8.58
+    elif contract_type == "Middle":
+        price = 17.09
+    elif contract_type == "Large":
+        price = 23.59
+    elif contract_type == "ExtraLarge":
+        price = 31.79
+if mobile_internet == "yes":
+    if price <= 10:
+        price = price + 5.5
+    elif price <= 30:
+        price = price + 4.35
+    else:
+        price = price + 3.85
+total_sum = price * payable_months
+if term == "two":
+    total_sum = total_sum * 0.9625
+
+print(f"{total_sum:.2f} lv.")
+
+#Мобилен оператор предлага договори с различна месечна такса в зависимост от срока - 1 или 2 години.  
+#Да се напише програма, която изчислява дължимата сума, която трябва да се плати за определен брой месеци.
+#                 срок / тип	      Small	      Middle      	Large 	      ExtraLarge
+#                 1 година(one)	    9.98 лв.	  18.99 лв.	    25.98 лв.	    35.99 лв.
+#                 2 години(two)	    8.58 лв.	  17.09 лв.	    23.59 лв.	    31.79 лв.
+#Условия:
+#при добавен мобилен интернет, към таксата за един месец се добавя:
+#   при такса по-малка или равна на 10.00 лв.  5.50 лв.
+#   при такса по-малка или равна на 30.00 лв.  4.35 лв.
+#   при такса по-голяма от 30.00 лв.  3.85 лв.
+#ако договорът e за две години, общата сума се намалява с 3.75%
+#Вход
+#От конзолата се четат 3 реда:
+#Срок на договор – текст – "one", или "two"
+#Тип на договор – текст – "Small",  "Middle", "Large"или "ExtraLarge"
+#Добавен мобилен интернет – текст – "yes" или "no"
+#Брой месеци за плащане - цяло число в интервала [1 … 24]
+#Изход
+#На конзолата се отпечатва 1 ред:
+#Цената, която заплаща клиентът, форматирана до втория знак след десетичната запетая, в следния формат:  "{цената} lv."
+#Вход              Изход
+#one               154.80 lv.
+#Small
+#yes
+#10
+#-------------------------------------
+#two               227.05 lv.
+#Large
+#no
+#10
